@@ -1,0 +1,112 @@
+h2{
+    padding-top: 30px;
+    text-transform: uppercase;
+    text-align: center;
+    background: linear-gradient(to right, #f4524d 0%, #5543ca 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+h3{
+    text-transform: uppercase;
+    background:  yellow;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.title {
+    max-width: 500px;
+    margin: 40px auto;
+    position: relative;
+    box-shadow: 0px 70px 50px 0 rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    background: lightgreen;
+    padding: 30px;
+    border-radius: 30px;
+    border-spacing: 0;
+    border: 1px solid #ccc;
+}
+.title .judul {
+    text-transform: uppercase;
+    text-align: left;
+    letter-spacing: 3px;
+    font-size: 1em;
+    line-height: 48px;
+    padding-bottom: 20px;
+    color: #5543ca;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: black;
+}
+/* .info .label {
+    position: relative;
+    margin: 10px;   
+} */
+.form-grup{
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.form-grup label{
+    position: absolute;
+    top: 15%;
+    left: 2%;
+}
+.tlabel{
+    position: absolute;
+    top: -49%;
+    left: 2%;
+    font-size: 12px;
+}
+.tform{
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+}
+.form-control{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+    font-size: 15px;
+}
+.label{
+    position: absolute;
+    top: 10px;
+    left: 0;
+    pointer-events: none;
+    transition: all 0.2s ease-out;
+    font-size: 15px;
+    color: #999;
+}
+.underline{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #007bff;
+    transform: scaleX(0);
+    transition: transform 0.2s ease-out;
+}
+
+.form-control:focus{
+    outline: none;
+    border-color: #007bff;
+}
+.form-control:focus+ .label, .form-control:valid+.label {
+    top: -20px;
+    font-size: 12px;
+    color: #007bff;
+}
+.form-control+.label{
+    color: black;
+}
+.form-control ~ .underline {
+    transform: scaleX(1);
+}
+.form-control:valid ~ .underline {
+    background-color: green;
+}
+.form-control:invalid ~ .underline {
+    background-color: #ff5722;
+}

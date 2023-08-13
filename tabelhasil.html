@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Data Pendaftar Beasiswa</title>
+    <link rel="stylesheet" href="style2.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script>
+      window.onload = function () {
+        // Get the value from localStorage
+        const allData = JSON.parse(localStorage.getItem("dataHasil")) || [];
+         
+        const tableBody = document
+          .getElementById("dataTable")
+          .getElementsByTagName("tbody")[0];
+
+        allData.forEach((data) => {
+          const dataRow = document.createElement("tr");
+          dataRow.innerHTML = `
+                                <td data-label="NIM">
+                                    ${data.dataNIM}
+                                </td>
+                                <td data-label="Nama">
+                                    ${data.dataNama}
+                                </td>
+                                <td data-label="Email">
+                                    ${data.dataEmail}
+                                </td>
+                                <td data-label="Nomor HP">
+                                    ${data.dataHp}
+                                </td>
+                                <td data-label="Semester">
+                                    ${data.dataSemester}
+                                </td>
+                                <td data-label="IPK">
+                                    ${data.dataIpk}
+                                </td>
+                                <td data-label="Beasiswa">
+                                    ${data.dataBeasiswa}
+                                </td>
+                                <td data-label="Berkas Persyaratan">
+                                    ${data.dataBerkas}
+                                </td>
+                                <td data-label="Status">
+                                    ${data.dataStatus}
+                                </td>
+                `;
+          tableBody.appendChild(dataRow);
+        });
+      };
+    </script>
+  </head>
+
+  <body>
+    <nav class="nav nav-pills flex-column flex-sm-row">
+      <h3 class="mt-3">Universitas Perjuangan</h3>
+      <a onclick="pindahLaman()" class="mt-2 flex-sm-fill text-sm-center nav-link" href="#">Daftar</a>
+      <a  class="mt-2 flex-sm-fill text-sm-center nav-link active" aria-current="page" href="#">Hasil</a>
+    </nav>
+    <div class="table-container">
+      <section>
+        <div class="teab">
+        <h1 class="heading">Data Pendaftar Beasiswa</h1>
+          <table id="dataTable" class="table table-hover">
+            <div class="tbl-header">
+              <thead class="head table-info">
+                <tr>
+                  <th label = "NIM">NIM</th>
+                  <th>Nama</th>
+                  <th>Email</th>
+                  <th>Nomor HP</th>
+                  <th>Semester</th>
+                  <th>IPK</th>
+                  <th>Beasiswa</th>
+                  <th>Berkas Persyaratan</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+            </div>
+            <div class="tbl-content">
+              <tbody></tbody>
+            </div>
+          </table>
+        </div>
+      </section>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
